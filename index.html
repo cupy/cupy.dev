@@ -98,7 +98,7 @@
 			   <div class="hero-text">
 				   <h1 class="responsive-headline"><img src="images/cupy.png" width=600/></h1>
 
-				   <p>NumPy-compatible matrix library accelerated by CUDA</p>
+				   <p>A NumPy-compatible matrix library accelerated by CUDA</p>
 			   </div>
 
             <div class="buttons">
@@ -123,11 +123,11 @@
       <div class="row feature design">
 
          <div class="twelve columns right">
-            <h3>High performance with CUDA.</h3>
+            <h3>High performance with CUDA</h3>
 
             <p>
-              CuPy is a matrix library accelerated by NVIDIA CUDA.
-              It also uses CUDA related libraries including cuBLAS, cuDNN, cuRand, cuSolver and NCCL.
+              CuPy is an open-source matrix library accelerated with NVIDIA CUDA.
+              It also uses CUDA-related libraries including cuBLAS, cuDNN, cuRand, cuSolver and NCCL to make full use of the GPU architecture.
             </p>
          </div>
 
@@ -167,11 +167,11 @@ var myChart = new Chart(ctx, {
       <div class="row feature responsive">
 
          <div class="six columns left">
-            <h3>Highly compatible with NumPy.</h3>
+            <h3>Highly compatible with NumPy</h3>
 
             <p>
-              CuPy has highly compatible interface with NumPy.
-              All you need to do is just replacing <code>numpy</code> with <code>cupy</code>.
+              CuPy's interface is highly compatible with NumPy; in most cases it can be used as a drop-in replacement.
+              All you need to do is just replace <code>numpy</code> with <code>cupy</code> in your Python code.
               It supports various methods, indexing, data types, broadcasting and more.
             </p>
          </div>
@@ -194,13 +194,13 @@ array([  3.,  12.], dtype=float32)
       <div class="row feature cross-browser">
 
          <div class="six columns right">
-            <h3>Easy to install.</h3>
+            <h3>Easy to install</h3>
 
             <p>
-              Just use pip command to install CuPy.
-              CuPy supports various versions of CUDA and cuDNN.
-              The installer automatically detects versions of CUDA and cuDNN in your environment.
-              <a href="http://docs.cupy.chainer.org/en/stable/install.html">See detail</a>.
+              The easiest way to install CuPy is to use pip.
+              CuPy also supports various versions of CUDA and cuDNN.
+              The installer automatically detects installed versions of CUDA and cuDNN in your environment.
+              <a href="http://docs.cupy.chainer.org/en/stable/install.html">See details</a>.
             </p>
          </div>
 
@@ -219,11 +219,10 @@ array([  3.,  12.], dtype=float32)
             <h3>Easy to write a custom kernel</h3>
 
             <p>
-              You can easily make a custom CUDA kernel if you want to make your code faster.
-              You only need to write a code snippet in C++.
-              CuPy automatically wraps it with a stub code and compiles it to make a CUDA binary.
-              Compiled binaries are cached and reused in second run.
-              <a href="http://docs.cupy.chainer.org/en/latest/tutorial/kernel.html">See detail</a>.
+              You can easily make a custom CUDA kernel if you want to make your code run faster, requiring only a small code snippet of C++.
+              CuPy automatically wraps and compiles it to make a CUDA binary.
+              Compiled binaries are cached and reused in subsequent runs.
+              <a href="http://docs.cupy.chainer.org/en/latest/tutorial/kernel.html">See details</a>.
             </p>
          </div>
 
