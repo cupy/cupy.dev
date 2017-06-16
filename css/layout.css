@@ -982,4 +982,12 @@ a#imagelightbox-close:hover, a#imagelightbox-close:focus { color: #11ABB0; }
 		right: 1.25em; /* 20 */
 	}
 
-} 
+}
+
+div.logo {
+  display: table-cell;
+  vertical-align: middle;
+  height: 10em;
+  padding-left: 8px;
+  padding-right: 8px;
+}
