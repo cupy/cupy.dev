@@ -167,7 +167,8 @@ ul#nav li.current a { color: #fff; }
 
 #hero {
    padding-top: 66px;
-   background: #23292f url(img/hero-bg.png);
+   background: #23292f url(img/cupy-background.jpg);
+   background-size: cover;
    overflow: hidden;
 }
 
@@ -175,16 +176,12 @@ ul#nav li.current a { color: #fff; }
 @media
 (-webkit-min-device-pixel-ratio: 2),
 (min-resolution: 192dpi) {
-
-	#hero { 
-		/* background: #23292f url(img/hero-bg_@2X.png); */
-                background: #23292f url(img/cupy-background.jpg);
-		/*background-size: 200px 200px;*/
-                background-size: cover;
-                background-position: center center;
-                background-repeat: no-repeat;
-	}
-  
+    #hero { 
+        background: #23292f url(img/cupy-background.jpg);
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
 }
 
 #hero .row { max-width: 1040px; }
