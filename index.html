@@ -8,9 +8,9 @@
    <!--- Basic Page Needs
    ================================================== -->
    <meta charset="utf-8">
-	<title>CuPy</title>
-	<meta name="description" content="">  
-	<meta name="author" content="">
+	<title>CuPy: A NumPy-compatible matrix library accelerated by CUDA</title>
+	<!--<meta name="description" content="">
+	<meta name="author" content="">-->
 
     <meta property="og:title" content="CuPy">
     <meta property="og:type" content="website">
@@ -102,14 +102,8 @@
 			   </div>
 
             <div class="buttons">
-               <!-- <a class="button trial" href="#">Free Trial</a> -->
                <a class="button learn-more" href="https://docs-cupy.chainer.org/">Learn More</a>
             </div>
-<!--
-            <div class="hero-image">
-               <img src="images/hero-image.png" alt="" />
-            </div>
--->
 		   </div>
 
 	   </div>
@@ -122,45 +116,68 @@
 
       <div class="row feature design">
 
-         <div class="twelve columns right">
+         <div class="six columns right">
             <h3>High performance with CUDA</h3>
 
             <p>
               CuPy is an open-source matrix library accelerated with NVIDIA CUDA.
-              It also uses CUDA-related libraries including cuBLAS, cuDNN, cuRand, cuSolver, cuSPARSE, cuFFT and NCCL to make full use of the GPU architecture.
+              CuPy provides GPU accelerated computing with Python.
+              CuPy uses CUDA-related libraries including cuBLAS, cuDNN, cuRand, cuSolver, cuSPARSE, cuFFT and NCCL to make full use of the GPU architecture.
+              <br>
+              The figure shows CuPy speedup over NumPy.
+              Most of them perform well on a GPU using CuPy out of the box. CuPy speeds up some operations more than 100X.
+              You can read original benchmark article in <a href="https://medium.com/rapids-ai/single-gpu-cupy-speedups-ea99cbbb0cbb">Single-GPU CuPy Speedups (RAPIDS AI)</a>.
             </p>
+            
          </div>
 
-<!--
          <div class="six columns feature-media left">
-           <canvas id="benchmark" height="200" width="300"></canvas>
+           <canvas id="benchmark" height="350" width="400"></canvas>
            <script>
 var ctx = document.getElementById('benchmark').getContext('2d');
 var myChart = new Chart(ctx, {
   type: 'bar',
   options: {
+    title: {
+      display: true,
+      text: 'CuPy speedup over NumPy (Quoted from RAPIDS AI)'
+    },
     scales: {
       yAxes: [{
-        time: {unit: 'second'}
+        type: 'logarithmic',
+        ticks: {
+          min: 1,
+          stepSize: 10,
+          max: 500,
+          callback: function (value, index, values) {
+            return Number(value.toString());
+          }
+        },
+        afterBuildTicks: function(pckBarChart) {
+            pckBarChart.ticks = [1, 2, 5, 10, 20, 50, 100, 200, 500];
+          },
+        scaleLabel: {
+          display: true,
+          labelString: 'Speedup'
+        }
       }]
     }
   },
   data: {
-    labels: ['NMT', 'K-means', 'X', 'T', 'F', 'S', 'S'],
+    labels: ['Elementwise', 'FFT', 'Array Slicing', 'Stencil', 'Sum', 'Matrix Multiplication', 'SVD', 'Standard Deviation'],
     datasets: [{
-      label: 'CuPy',
-      data: [12, 19, 3, 17, 6, 3, 7],
-      backgroundColor: "rgba(153,255,51,0.4)"
+      label: 'Array Size 800 MB',
+      data: [270, 210, 190, 150, 66, 11, 17, 3.5],
+      backgroundColor: "rgba(115, 6, 255, 1)"
     }, {
-      label: 'NumPy',
-      data: [2, 29, 5, 5, 2, 3, 10],
-      backgroundColor: "rgba(255,153,0,0.4)"
+      label: 'Array Size 8 MB',
+      data: [150, 5.3, 3.6, 5.1, 8.3, 18, 1.5, 1.1],
+      backgroundColor: "rgba(54, 201, 221, 1)"
     }]
   }
 });
            </script>
          </div>
--->
 
       </div>
 
@@ -172,21 +189,22 @@ var myChart = new Chart(ctx, {
             <p>
               CuPy's interface is highly compatible with NumPy; in most cases it can be used as a drop-in replacement.
               All you need to do is just replace <code>numpy</code> with <code>cupy</code> in your Python code.
-              It supports various methods, indexing, data types, broadcasting and more.
+              <a href="https://docs-cupy.chainer.org/en/stable/tutorial/basic.html">Basics of CuPy (Tutorial)</a> is usefull to learn first step of CuPy.
+              <br>
+              CuPy supports various methods, indexing, data types, broadcasting and more.
+              <a href="https://docs-cupy.chainer.org/en/stable/reference/comparison.html">Comparison Table (Reference Manual)</a> shows a list of NumPy / SciPy APIs and its corresponding CuPy implementations.
             </p>
          </div>
 
          <div class="six columns feature-media right">
-           <pre><code class="language-python">
->>> import cupy as cp
+           <pre><code class="language-python">>>> import cupy as cp
 >>> x = cp.arange(6).reshape(2, 3).astype('f')
 >>> x
 array([[ 0.,  1.,  2.],
        [ 3.,  4.,  5.]], dtype=float32)
 >>> x.sum(axis=1)
 array([  3.,  12.], dtype=float32)
-           </code></pre>
-           <!-- <img src="images/feature-image-2.png" alt="" /> -->
+</code></pre>
          </div>
 
       </div>
@@ -199,40 +217,36 @@ array([  3.,  12.], dtype=float32)
             <p>
               The easiest way to install CuPy is to use pip.
               CuPy provides Wheels (precompiled binary packages) for the recommended environments. These packages include cuDNN and NCCL.
-              <a href="https://docs-cupy.chainer.org/en/stable/install.html#install-cupy">See details</a>.
-
-              And, CuPy can be installed from source code.
+              Please read <a href="https://docs-cupy.chainer.org/en/stable/install.html#install-cupy">Install CuPy (Installation Guide)</a>.
+              <br>
+              <a href="https://docs-cupy.chainer.org/en/stable/install.html#install-cupy-from-source">CuPy can be installed from source code</a>.
               The install script in the source code automatically detects installed versions of CUDA, cuDNN and NCCL in your environment.
-              <a href="https://docs-cupy.chainer.org/en/stable/install.html#install-cupy-from-source">See details</a>.
             </p>
          </div>
 
          <div class="six columns feature-media left">
-           <!-- <img src="images/feature-image-3.png" alt="" /> -->
-           <pre><code class="language-bash">
-(For CUDA 8.0)
-% pip install cupy-cuda80
+           <pre><code class="language-bash"># For CUDA 8.0
+pip install cupy-cuda80
 
-(For CUDA 9.0)
-% pip install cupy-cuda90
+# For CUDA 9.0
+pip install cupy-cuda90
 
-(For CUDA 9.1)
-% pip install cupy-cuda91
+# For CUDA 9.1
+pip install cupy-cuda91
 
-(For CUDA 9.2)
-% pip install cupy-cuda92
+# For CUDA 9.2
+pip install cupy-cuda92
 
-(For CUDA 10.0)
-% pip install cupy-cuda100
+# For CUDA 10.0
+pip install cupy-cuda100
 
-(For CUDA 10.1)
-% pip install cupy-cuda101
+# For CUDA 10.1
+pip install cupy-cuda101
 
-(Install CuPy from source)
-% pip install cupy
-           </code></pre>
+# Install CuPy from source
+pip install cupy
+</code></pre>
          </div>
-
       </div>
 
       <div class="row feature responsive">
@@ -244,13 +258,14 @@ array([  3.,  12.], dtype=float32)
               You can easily make a custom CUDA kernel if you want to make your code run faster, requiring only a small code snippet of C++.
               CuPy automatically wraps and compiles it to make a CUDA binary.
               Compiled binaries are cached and reused in subsequent runs.
-              <a href="https://docs-cupy.chainer.org/en/latest/tutorial/kernel.html">See details</a>.
+              Please read <a href="https://docs-cupy.chainer.org/en/latest/tutorial/kernel.html">User-Defined Kernels (Tutorial)</a>.
+              <br>
+              And, you can also use raw CUDA kernel via <a href="https://docs-cupy.chainer.org/en/latest/tutorial/kernel.html#raw-modules">Raw modules (Tutorial)</a>.
             </p>
          </div>
 
          <div class="six columns feature-media right">
-           <pre><code class="language-python">
->>> x = cp.arange(6, dtype='f').reshape(2, 3)
+           <pre><code class="language-python">>>> x = cp.arange(6, dtype='f').reshape(2, 3)
 >>> y = cp.arange(3, dtype='f')
 >>> kernel = cp.ElementwiseKernel(
 ...     'float32 x, float32 y', 'float32 z',
@@ -258,12 +273,12 @@ array([  3.,  12.], dtype=float32)
 ...       z = x * y;
 ...     } else {
 ...       z = x + y;
-...     }''', 'my_kernel')
+...     }''',
+...     'my_kernel')
 >>> kernel(x, y)
 array([[ 0.,  2.,  4.],
        [ 0.,  4.,  10.]], dtype=float32)
-           </code></pre>
-           <!-- <img src="images/feature-image-2.png" alt="" /> -->
+</code></pre>
          </div>
 
       </div>
