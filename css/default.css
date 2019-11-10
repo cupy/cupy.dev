@@ -172,7 +172,7 @@ body {
    font-weight: normal;
    font-size: 15px;
    line-height: 30px;
-	color: #838C95;
+	color: #434C55;
 
    -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
 	-webkit-text-size-adjust: 100%;
@@ -312,7 +312,6 @@ hr { border: solid #E8E8E8; border-width: 1px 0 0; clear: both; margin: 11px 0 3
 /*  3. Links  ------------------------------------------------------- */
 
 a, a:visited {
-   text-decoration: none;
    outline: 0;
    color: #11ABB0;
 
