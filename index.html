@@ -32,7 +32,7 @@
         ================================================== -->
         <script src="js/modernizr.js"></script>
         <script src="js/prism.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+        <script defer src="Chart.js_2.9.3/Chart.min.js"></script>
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-797798-13"></script>
         <script>
       window.dataLayer = window.dataLayer || [];
@@ -131,48 +131,50 @@
                 <div class="six columns feature-media left">
                     <canvas id="benchmark" height="350" width="400"></canvas>
                     <script>
-var ctx = document.getElementById('benchmark').getContext('2d');
-var myChart = new Chart(ctx, {
-  type: 'bar',
-  options: {
-    title: {
-      display: true,
-      text: 'CuPy speedup over NumPy (Quoted from RAPIDS AI)'
-    },
-    scales: {
-      yAxes: [{
-        type: 'logarithmic',
-        ticks: {
-          min: 1,
-          stepSize: 10,
-          max: 500,
-          callback: function (value, index, values) {
-            return Number(value.toString());
-          }
-        },
-        afterBuildTicks: function(pckBarChart) {
-            pckBarChart.ticks = [1, 2, 5, 10, 20, 50, 100, 200, 500];
+window.onload = function(){
+  var ctx = document.getElementById('benchmark').getContext('2d');
+  var myChart = new Chart(ctx, {
+    type: 'bar',
+    options: {
+      title: {
+        display: true,
+        text: 'CuPy speedup over NumPy (Quoted from RAPIDS AI)'
+      },
+      scales: {
+        yAxes: [{
+          type: 'logarithmic',
+          ticks: {
+            min: 1,
+            stepSize: 10,
+            max: 500,
+            callback: function (value, index, values) {
+              return Number(value.toString());
+            }
           },
-        scaleLabel: {
-          display: true,
-          labelString: 'Speedup'
-        }
+          afterBuildTicks: function(pckBarChart) {
+              pckBarChart.ticks = [1, 2, 5, 10, 20, 50, 100, 200, 500];
+            },
+          scaleLabel: {
+            display: true,
+            labelString: 'Speedup'
+          }
+        }]
+      }
+    },
+    data: {
+      labels: ['Elementwise', 'FFT', 'Array Slicing', 'Stencil', 'Sum', 'Matrix Multiplication', 'SVD', 'Standard Deviation'],
+      datasets: [{
+        label: 'Array Size 800 MB',
+        data: [270, 210, 190, 150, 66, 11, 17, 3.5],
+        backgroundColor: "rgba(115, 6, 255, 1)"
+      }, {
+        label: 'Array Size 8 MB',
+        data: [150, 5.3, 3.6, 5.1, 8.3, 18, 1.5, 1.1],
+        backgroundColor: "rgba(54, 201, 221, 1)"
       }]
     }
-  },
-  data: {
-    labels: ['Elementwise', 'FFT', 'Array Slicing', 'Stencil', 'Sum', 'Matrix Multiplication', 'SVD', 'Standard Deviation'],
-    datasets: [{
-      label: 'Array Size 800 MB',
-      data: [270, 210, 190, 150, 66, 11, 17, 3.5],
-      backgroundColor: "rgba(115, 6, 255, 1)"
-    }, {
-      label: 'Array Size 8 MB',
-      data: [150, 5.3, 3.6, 5.1, 8.3, 18, 1.5, 1.1],
-      backgroundColor: "rgba(54, 201, 221, 1)"
-    }]
-  }
-});
+  });
+}
            </script>
                 </div>
             </div>
@@ -308,8 +310,8 @@ array([[ 0.,  2.,  4.],
         <!-- Footer End-->
         <!-- Java Script
    ================================================== -->
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-        <script src="https://code.jquery.com/jquery-migrate-3.0.0.js"></script>
+        <script src="js/jquery-3.4.1.min.js"></script>
+        <script src="js/jquery-migrate-3.0.0.min.js"></script>
         <script src="js/jquery.flexslider.js"></script>
         <script src="js/waypoints.js"></script>
         <script src="js/jquery.fittext.js"></script>
