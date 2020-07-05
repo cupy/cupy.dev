@@ -9,11 +9,11 @@
         <!--- Basic Page Needs
    ================================================== -->
         <meta charset="utf-8">
-        <title>CuPy: A NumPy-compatible matrix library accelerated by CUDA</title>
-        <meta name="description" content="CuPy is an open-source matrix library accelerated with NVIDIA CUDA. CuPy provides GPU accelerated computing with Python. CuPy uses CUDA-related libraries including cuBLAS, cuDNN, cuRand, cuSolver, cuSPARSE, cuFFT and NCCL to make full use of the GPU architecture.">
+        <title>CuPy: A NumPy-compatible array library accelerated by CUDA</title>
+        <meta name="description" content="CuPy is an open-source array library accelerated with NVIDIA CUDA. CuPy provides GPU accelerated computing with Python. CuPy uses CUDA-related libraries including cuBLAS, cuDNN, cuRand, cuSolver, cuSPARSE, cuFFT and NCCL to make full use of the GPU architecture.">
         <meta property="og:title" content="CuPy">
         <meta property="og:type" content="website">
-        <meta property="og:description" content="CuPy is NumPy-compatible matrix library accelerated by CUDA">
+        <meta property="og:description" content="CuPy is NumPy-compatible array library accelerated by CUDA">
         <meta property="og:url" content="https://cupy.chainer.org/">
         <meta property="og:image" content="https://cupy.chainer.org/images/cupy_logo.png" />
         <meta property="og:site_name" content="CuPy">
@@ -108,7 +108,7 @@
                         <h1 class="responsive-headline">
                             <img src="images/cupy.png" width=600 alt="cupy_logo">
                         </h1>
-                        <p>A NumPy-compatible matrix library accelerated by CUDA</p>
+                        <p>A NumPy-compatible array library accelerated by CUDA</p>
                     </div>
                     <div class="buttons">
                         <a class="button learn-more" href="https://docs-cupy.chainer.org/">View Docs</a>
@@ -123,9 +123,9 @@
             <div class="row feature design">
                 <div class="six columns right">
                     <h3>High performance with CUDA</h3>
-                    <p>CuPy is an open-source matrix library accelerated with NVIDIA CUDA. CuPy provides GPU accelerated computing with Python. CuPy uses CUDA-related libraries including cuBLAS, cuDNN, cuRand, cuSolver, cuSPARSE, cuFFT and NCCL to make full use of the GPU architecture. 
-                        <br>The figure shows CuPy speedup over NumPy. Most of them perform well on a GPU using CuPy out of the box. CuPy speeds up some operations more than 100X. You can read original benchmark article in 
-                        <a href="https://medium.com/rapids-ai/single-gpu-cupy-speedups-ea99cbbb0cbb">Single-GPU CuPy Speedups (RAPIDS AI)</a>.
+                    <p>CuPy is an open-source array library accelerated with NVIDIA CUDA. CuPy provides GPU accelerated computing with Python. CuPy uses CUDA-related libraries including cuBLAS, cuDNN, cuRand, cuSolver, cuSPARSE, cuFFT and NCCL to make full use of the GPU architecture. 
+                        <br>The figure shows CuPy speedup over NumPy. Most operations perform well on a GPU using CuPy out of the box. CuPy speeds up some operations more than 100X. Read the original benchmark article 
+                        <a href="https://medium.com/rapids-ai/single-gpu-cupy-speedups-ea99cbbb0cbb">Single-GPU CuPy Speedups</a> on the RAPIDS AI Medium blog.
                     </p>
                 </div>
                 <div class="six columns feature-media left">
@@ -182,11 +182,11 @@ window.onload = function(){
                 <div class="six columns left">
                     <h3>Highly compatible with NumPy</h3>
                     <p>CuPy's interface is highly compatible with NumPy; in most cases it can be used as a drop-in replacement. All you need to do is just replace 
-                        <code>numpy</code>with
-                        <code>cupy</code>in your Python code.
-                        <a href="https://docs-cupy.chainer.org/en/stable/tutorial/basic.html">Basics of CuPy (Tutorial)</a>is usefull to learn first step of CuPy.
+                        <code>numpy</code> with
+                        <code>cupy</code> in your Python code.
+                        The <a href="https://docs-cupy.chainer.org/en/stable/tutorial/basic.html">Basics of CuPy</a> tutorial is useful to learn first steps with CuPy.
                         <br>CuPy supports various methods, indexing, data types, broadcasting and more. 
-                        <a href="https://docs-cupy.chainer.org/en/stable/reference/comparison.html">Comparison Table (Reference Manual)</a>shows a list of NumPy / SciPy APIs and its corresponding CuPy implementations.
+                        <a href="https://docs-cupy.chainer.org/en/stable/reference/comparison.html">This comparison table</a> shows a list of NumPy / SciPy APIs and their corresponding CuPy implementations.
                     </p>
                 </div>
                 <div class="six columns feature-media right">
@@ -203,10 +203,10 @@ array([  3.,  12.], dtype=float32)
             <div class="row feature cross-browser">
                 <div class="six columns right">
                     <h3>Easy to install</h3>
-                    <p>The easiest way to install CuPy is to use pip. CuPy provides Wheels (precompiled binary packages) for the recommended environments. These packages include cuDNN and NCCL. Please read 
-                        <a href="https://docs-cupy.chainer.org/en/stable/install.html#install-cupy">Install CuPy (Installation Guide)</a>.
+                    <p>The easiest way to install CuPy is to use pip. CuPy provides wheels (precompiled binary packages) for the recommended environments. These packages include cuDNN and NCCL. Please read 
+                        <a href="https://docs-cupy.chainer.org/en/stable/install.html#install-cupy">Install CuPy</a> for more details.
                         <br>
-                        <a href="https://docs-cupy.chainer.org/en/stable/install.html#install-cupy-from-source">CuPy can be installed from source code</a>. The install script in the source code automatically detects installed versions of CUDA, cuDNN and NCCL in your environment.
+                        CuPy can also be <a href="https://docs-cupy.chainer.org/en/stable/install.html#install-cupy-from-source">installed from source code</a>. The install script in the source code automatically detects installed versions of CUDA, cuDNN and NCCL in your environment.
                     </p>
                 </div>
                 <div class="six columns feature-media left">
@@ -239,10 +239,10 @@ pip install cupy
             <div class="row feature responsive">
                 <div class="six columns left">
                     <h3>Easy to write a custom kernel</h3>
-                    <p>You can easily make a custom CUDA kernel if you want to make your code run faster, requiring only a small code snippet of C++. CuPy automatically wraps and compiles it to make a CUDA binary. Compiled binaries are cached and reused in subsequent runs. Please read 
-                        <a href="https://docs-cupy.chainer.org/en/stable/tutorial/kernel.html">User-Defined Kernels (Tutorial)</a>.
-                        <br>And, you can also use raw CUDA kernel via 
-                        <a href="https://docs-cupy.chainer.org/en/stable/tutorial/kernel.html#raw-modules">Raw modules (Tutorial)</a>.
+                    <p>You can easily make a custom CUDA kernel if you want to make your code run faster, requiring only a small code snippet of C++. CuPy automatically wraps and compiles it to make a CUDA binary. Compiled binaries are cached and reused in subsequent runs. Please read the 
+                        <a href="https://docs-cupy.chainer.org/en/stable/tutorial/kernel.html">User-Defined Kernels</a> tutorial.
+                        <br>And, you can also use raw CUDA kernels via 
+                        <a href="https://docs-cupy.chainer.org/en/stable/tutorial/kernel.html#raw-modules">Raw modules</a>.
                     </p>
                 </div>
                 <div class="six columns feature-media right">
