@@ -14,8 +14,8 @@
         <meta property="og:title" content="CuPy">
         <meta property="og:type" content="website">
         <meta property="og:description" content="CuPy is NumPy-compatible array library accelerated by CUDA">
-        <meta property="og:url" content="https://cupy.chainer.org/">
-        <meta property="og:image" content="https://cupy.chainer.org/images/cupy_logo.png" />
+        <meta property="og:url" content="https://cupy.dev/">
+        <meta property="og:image" content="https://cupy.dev/images/cupy_logo.png" />
         <meta property="og:site_name" content="CuPy">
         <!-- Mobile Specific Metas
    ================================================== -->
@@ -64,16 +64,19 @@
                 <a class="mobile-btn" href="#" title="Hide navigation">Hide Menu</a>
                 <ul id="nav" class="nav">
                     <li>
-                        <a class="smoothscroll" href="#features">Features</a>
+                        <a class="smoothscroll" href="#features"><i class="fa fa-bolt"></i> Features</a>
                     </li>
                     <li>
-                        <a href="https://docs-cupy.chainer.org/">Documents</a>
+                        <a href="https://docs.cupy.dev/"><i class="fa fa-book"></i> Docs</a>
                     </li>
                     <li>
-                        <a href="https://github.com/cupy/cupy">GitHub</a>
+                        <a href="https://github.com/cupy/cupy"><i class="fa fa-github"></i> GitHub</a>
                     </li>
                     <li>
-                        <a href="https://preferred-networks.jp/">About us</a>
+                        <a href="https://twitter.com/CuPy_Team"><i class="fa fa-twitter"></i> Twitter</a>
+                    </li>
+                    <li>
+                        <a href="https://preferred.jp/en/"><i class="fa fa-user"></i> About us</a>
                     </li>
                 </ul>
                 <!-- end #nav -->
@@ -81,18 +84,13 @@
             <!-- end #nav-wrap -->
             <ul class="header-social">
                 <li>
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2fcupy.chainer.org/">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2fcupy.dev/">
                         <i class="fa fa-facebook"></i>
                     </a>
                 </li>
                 <li>
-                    <a href="https://twitter.com/share?url=https%3A%2F%2Fcupy.chainer.org&hashtags=cupy&text=CuPy">
+                    <a href="https://twitter.com/share?url=https%3A%2F%2Fcupy.dev&hashtags=cupy&text=CuPy">
                         <i class="fa fa-twitter"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://plus.google.com/share?url=https%3A%2F%2fcupy.chainer.org">
-                        <i class="fa fa-google-plus"></i>
                     </a>
                 </li>
                 <!-- <li><a href="#"><i class="fa fa-rss-square"></i></a></li> -->
@@ -111,7 +109,7 @@
                         <p>A NumPy-compatible array library accelerated by CUDA</p>
                     </div>
                     <div class="buttons">
-                        <a class="button learn-more" href="https://docs-cupy.chainer.org/">View Docs</a>
+                        <a class="button learn-more" href="https://docs.cupy.dev/">View Docs</a>
                     </div>
                 </div>
             </div>
@@ -184,9 +182,9 @@ window.onload = function(){
                     <p>CuPy's interface is highly compatible with NumPy; in most cases it can be used as a drop-in replacement. All you need to do is just replace 
                         <code>numpy</code> with
                         <code>cupy</code> in your Python code.
-                        The <a href="https://docs-cupy.chainer.org/en/stable/tutorial/basic.html">Basics of CuPy</a> tutorial is useful to learn first steps with CuPy.
+                        The <a href="https://docs.cupy.dev/en/stable/tutorial/basic.html">Basics of CuPy</a> tutorial is useful to learn first steps with CuPy.
                         <br>CuPy supports various methods, indexing, data types, broadcasting and more. 
-                        <a href="https://docs-cupy.chainer.org/en/stable/reference/comparison.html">This comparison table</a> shows a list of NumPy / SciPy APIs and their corresponding CuPy implementations.
+                        <a href="https://docs.cupy.dev/en/stable/reference/comparison.html">This comparison table</a> shows a list of NumPy / SciPy APIs and their corresponding CuPy implementations.
                     </p>
                 </div>
                 <div class="six columns feature-media right">
@@ -204,9 +202,9 @@ array([  3.,  12.], dtype=float32)
                 <div class="six columns right">
                     <h3>Easy to install</h3>
                     <p>The easiest way to install CuPy is to use pip. CuPy provides wheels (precompiled binary packages) for the recommended environments. These packages include cuDNN and NCCL. Please read 
-                        <a href="https://docs-cupy.chainer.org/en/stable/install.html#install-cupy">Install CuPy</a> for more details.
+                        <a href="https://docs.cupy.dev/en/stable/install.html#install-cupy">Install CuPy</a> for more details.
                         <br>
-                        CuPy can also be <a href="https://docs-cupy.chainer.org/en/stable/install.html#install-cupy-from-source">installed from source code</a>. The install script in the source code automatically detects installed versions of CUDA, cuDNN and NCCL in your environment.
+                        CuPy can also be <a href="https://docs.cupy.dev/en/stable/install.html#install-cupy-from-source">installed from source code</a>. The install script in the source code automatically detects installed versions of CUDA, cuDNN and NCCL in your environment.
                     </p>
                 </div>
                 <div class="six columns feature-media left">
@@ -240,9 +238,9 @@ pip install cupy
                 <div class="six columns left">
                     <h3>Easy to write a custom kernel</h3>
                     <p>You can easily make a custom CUDA kernel if you want to make your code run faster, requiring only a small code snippet of C++. CuPy automatically wraps and compiles it to make a CUDA binary. Compiled binaries are cached and reused in subsequent runs. Please read the 
-                        <a href="https://docs-cupy.chainer.org/en/stable/tutorial/kernel.html">User-Defined Kernels</a> tutorial.
+                        <a href="https://docs.cupy.dev/en/stable/tutorial/kernel.html">User-Defined Kernels</a> tutorial.
                         <br>And, you can also use raw CUDA kernels via 
-                        <a href="https://docs-cupy.chainer.org/en/stable/tutorial/kernel.html#raw-modules">Raw modules</a>.
+                        <a href="https://docs.cupy.dev/en/stable/tutorial/kernel.html#raw-modules">Raw modules</a>.
                     </p>
                 </div>
                 <div class="six columns feature-media right">
@@ -295,10 +293,9 @@ array([[ 0.,  2.,  4.],
         <footer>
             <div class="row">
                 <p class="copyright">&copy; 
-                    <a href="https://www.preferred-networks.jp/">Preferred Networks, inc.</a>,
-                    <a href="https://preferred.jp/">Preferred Infrastructure, inc.</a>| Design by
-                    <a title="Styleshout" href="http://www.styleshout.com/">Styleshout</a>
+                    <a href="https://preferred.jp/en/">Preferred Networks, Inc.</a> &amp; Preferred Infrastructure, Inc. | Design by <a title="Styleshout" href="http://www.styleshout.com/">Styleshout</a>
                 </p>
+
                 <div id="go-top">
                     <a class="smoothscroll" aria-label="Back to Top" title="Back to Top" href="#hero">
                         <i class="icon-up-open"></i>
