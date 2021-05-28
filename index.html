@@ -9,7 +9,7 @@
         <!--- Basic Page Needs
    ================================================== -->
         <meta charset="utf-8">
-        <title>CuPy: A NumPy-compatible array library accelerated by CUDA</title>
+        <title>CuPy: NumPy &amp; SciPy for GPU</title>
         <meta name="description" content="CuPy is an open-source array library accelerated with NVIDIA CUDA. CuPy provides GPU accelerated computing with Python. CuPy uses CUDA-related libraries including cuBLAS, cuDNN, cuRand, cuSolver, cuSPARSE, cuFFT and NCCL to make full use of the GPU architecture.">
         <meta property="og:title" content="CuPy">
         <meta property="og:type" content="website">
@@ -115,10 +115,11 @@
                         <h1 class="responsive-headline">
                             <img src="images/cupy.png" width=600 alt="cupy_logo">
                         </h1>
-                        <p>A NumPy-compatible array library accelerated by CUDA</p>
+                        <p>NumPy/SciPy-compatible Array Library for GPU-accelerated Computing with Python</p>
                     </div>
                     <div class="buttons">
-                        <a class="button learn-more" href="https://docs.cupy.dev/">View Docs</a>
+                        <a class="button trial" href="https://docs.cupy.dev/en/stable/install.html"><i class="fa fa-rocket"></i> Get Started</a>
+                        <a class="button learn-more" href="https://docs.cupy.dev/en/stable/index.html"><i class="fa fa-book"></i>View Docs</a>
                     </div>
                 </div>
             </div>
@@ -129,8 +130,8 @@
         <section id='features'>
             <div class="row feature design">
                 <div class="six columns right">
-                    <h3>High performance with CUDA</h3>
-                    <p>CuPy is an open-source array library accelerated with NVIDIA CUDA. CuPy provides GPU accelerated computing with Python. CuPy uses CUDA-related libraries including cuBLAS, cuDNN, cuRand, cuSolver, cuSPARSE, cuFFT and NCCL to make full use of the GPU architecture. 
+                    <h3>High performance with GPU</h3>
+                    <p>CuPy is an open-source array library for GPU-accelerated computing with Python. CuPy utilizes CUDA Toolkit libraries including cuBLAS, cuRAND, cuSOLVER, cuSPARSE, cuFFT, cuDNN and NCCL to make full use of the GPU architecture.
                         <br>The figure shows CuPy speedup over NumPy. Most operations perform well on a GPU using CuPy out of the box. CuPy speeds up some operations more than 100X. Read the original benchmark article 
                         <a href="https://medium.com/rapids-ai/single-gpu-cupy-speedups-ea99cbbb0cbb">Single-GPU CuPy Speedups</a> on the RAPIDS AI Medium blog.
                     </p>
@@ -187,11 +188,11 @@ window.onload = function(){
             </div>
             <div class="row feature responsive">
                 <div class="six columns left">
-                    <h3>Highly compatible with NumPy</h3>
-                    <p>CuPy's interface is highly compatible with NumPy; in most cases it can be used as a drop-in replacement. All you need to do is just replace 
-                        <code>numpy</code> with
-                        <code>cupy</code> in your Python code.
-                        The <a href="https://docs.cupy.dev/en/stable/tutorial/basic.html">Basics of CuPy</a> tutorial is useful to learn first steps with CuPy.
+                    <h3>Highly compatible with NumPy &amp; SciPy</h3>
+                    <p>CuPy's interface is highly compatible with NumPy and SciPy; in most cases it can be used as a drop-in replacement. All you need to do is just replace 
+                    <code>numpy</code> and <code>scipy</code> with
+                    <code><a href="https://docs.cupy.dev/en/latest/reference/routines.html">cupy</a></code> and <code><a href="https://docs.cupy.dev/en/latest/reference/scipy.html">cupyx.scipy</a></code> in your Python code.
+                        The <a href="https://docs.cupy.dev/en/stable/user_guide/basic.html">Basics of CuPy</a> tutorial is useful to learn first steps with CuPy.
                         <br>CuPy supports various methods, indexing, data types, broadcasting and more. 
                         <a href="https://docs.cupy.dev/en/stable/reference/comparison.html">This comparison table</a> shows a list of NumPy / SciPy APIs and their corresponding CuPy implementations.
                     </p>
@@ -210,10 +211,10 @@ array([  3.,  12.], dtype=float32)
             <div class="row feature cross-browser">
                 <div class="six columns right">
                     <h3>Easy to install</h3>
-                    <p>The easiest way to install CuPy is to use pip. CuPy provides wheels (precompiled binary packages) for the recommended environments. Please read 
-                        <a href="https://docs.cupy.dev/en/stable/install.html#install-cupy">Install CuPy</a> for more details.
+                    <p>The easiest way to install CuPy is to use pip. CuPy provides wheels (precompiled binary packages) for Linux and Windows. Read the
+                        <a href="https://docs.cupy.dev/en/stable/install.html">Installation Guide</a> for more details.
                         <br>
-                        CuPy can also be <a href="https://docs.cupy.dev/en/stable/install.html#installing-cupy-from-conda-forge">installed from Conda-Forge</a> or <a href="https://docs.cupy.dev/en/stable/install.html#install-cupy-from-source">from source code</a>. The install script in the source code automatically detects installed versions of CUDA, cuDNN and NCCL in your environment.
+                        CuPy can also be <a href="https://docs.cupy.dev/en/stable/install.html#installing-cupy-from-conda-forge">installed from Conda-Forge</a> or <a href="https://docs.cupy.dev/en/stable/install.html#install-cupy-from-source">from source code</a>.
                     </p>
                 </div>
                 <div class="six columns feature-media left">
@@ -247,7 +248,7 @@ pip install cupy-rocm-4-0
                 <div class="six columns left">
                     <h3>Easy to write a custom kernel</h3>
                     <p>You can easily make a custom CUDA kernel if you want to make your code run faster, requiring only a small code snippet of C++. CuPy automatically wraps and compiles it to make a CUDA binary. Compiled binaries are cached and reused in subsequent runs. Please read the 
-                        <a href="https://docs.cupy.dev/en/stable/tutorial/kernel.html">User-Defined Kernels</a> tutorial.
+                        <a href="https://docs.cupy.dev/en/stable/user_guide/kernel.html">User-Defined Kernels</a> tutorial.
                         <br>And, you can also use raw CUDA kernels via 
                         <a href="https://docs.cupy.dev/en/stable/tutorial/kernel.html#raw-modules">Raw modules</a>.
                     </p>
@@ -257,12 +258,13 @@ pip install cupy-rocm-4-0
 >>> y = cp.arange(3, dtype='f')
 >>> kernel = cp.ElementwiseKernel(
 ...     'float32 x, float32 y', 'float32 z',
-...     '''if (x - 2 > y) {
+...     '''
+...     if (x - 2 > y) {
 ...       z = x * y;
 ...     } else {
 ...       z = x + y;
-...     }''',
-...     'my_kernel')
+...     }
+...     ''', 'my_kernel')
 >>> kernel(x, y)
 array([[ 0.,  2.,  4.],
        [ 0.,  4.,  10.]], dtype=float32)
