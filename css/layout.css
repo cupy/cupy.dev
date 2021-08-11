@@ -228,10 +228,10 @@ ul#nav li.current a { color: #fff; }
    font: 14px/24px 'montserrat-bold', sans-serif;
    text-transform : uppercase;
    letter-spacing: 2px;
+   margin: 15px;
 }
 #hero .buttons .trial {
    background: #f64b39;
-   margin-right: 30px;
 
    -webkit-animation-delay: 10s;
       -moz-animation-delay: 10s;
